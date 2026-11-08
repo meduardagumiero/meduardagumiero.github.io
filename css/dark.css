@@ -1,0 +1,304 @@
+/* =========================================================
+   saved as duda — DARK THEME  ·  "after dark" 
+   inspiração: estética de stop-motion / mundo à noite (sem personagens)
+   paleta: azul-noite, verde-petróleo, fio âmbar (costura), creme de botão
+   Tudo vive aqui, escopado em html[data-theme="dark"].
+   Pra desligar o tema inteiro basta remover o <link> deste arquivo.
+   ========================================================= */
+
+html[data-theme="dark"]{
+  color-scheme:dark;
+  --ink:#ebe4d0;          /* creme de papel/botão */
+  --soft:#9db0bb;
+  --acc:#f2b552;          /* âmbar (fio de costura) */
+  --pink:#f0a845;         /* ✿ ♡ viram âmbar quente */
+  --pinkd:#ffcb78;
+  --pinkl:rgba(240,168,69,.13);
+  --line:#2d4559;
+  --dash:#56788d;
+  --tint:#13263a;
+  --moss:#86c7ae;         /* verde "jardim" pros detalhes frios */
+  --card:#0f1d2d;
+  --card2:#152a3d;
+  --thread:#d9a24f;
+  --night:#07111d;
+}
+
+/* ---------- céu ---------- */
+html[data-theme="dark"] body{
+  background:#0a1626 url(../assets/sky-night.jpg) center top/cover fixed;
+  color:var(--ink);
+}
+html[data-theme="dark"] ::selection{background:#f2b55266;color:#fff}
+html[data-theme="dark"] a:hover{color:var(--pinkd)}
+html[data-theme="dark"] .topline{color:#cfd9de;text-shadow:0 1px 3px #050b14}
+
+/* ---------- logo: preto vira creme, sombra branca vira sombra de noite ---------- */
+html[data-theme="dark"] .hd .saved-logo img{
+  filter:invert(1) sepia(.28) saturate(1.15) brightness(.97) drop-shadow(3px 3px 0 #08121f) drop-shadow(0 0 10px rgba(242,181,82,.28))!important;
+}
+
+/* ---------- estrelinhas e flores do header ---------- */
+html[data-theme="dark"] .st{background:linear-gradient(135deg,#fffbe9,#c9d6e6);filter:drop-shadow(0 0 4px rgba(255,239,190,.75))}
+html[data-theme="dark"] .st.p{background:linear-gradient(135deg,#fff2d2,#f2b552)}
+html[data-theme="dark"] .sp{color:var(--pink);text-shadow:0 0 6px rgba(240,168,69,.7)}
+html[data-theme="dark"] .sp.b{color:#9fcfd0;text-shadow:0 0 6px rgba(134,199,174,.6)}
+
+/* ---------- menu do topo ---------- */
+html[data-theme="dark"] .menu a{
+  color:#e4dcc6;border-color:#58748a;
+  background:linear-gradient(#1c3347,#10202f);
+  box-shadow:inset 0 0 0 1px #2a465c;
+}
+html[data-theme="dark"] .menu a i{color:var(--pink)}
+html[data-theme="dark"] .menu a:hover{
+  background:linear-gradient(#3a2d1a,#241a0d);border-color:var(--thread);color:var(--pinkd);
+}
+html[data-theme="dark"] .menu a.on{
+  background:linear-gradient(#f2b552,#c98a2c);border-color:#8a5d17;color:#2a1b05;box-shadow:inset 0 0 0 1px #ffd99a;
+}
+html[data-theme="dark"] .menu a.on i{color:#2a1b05}
+
+/* ---------- ícones da área de trabalho ---------- */
+html[data-theme="dark"] .ico,
+html[data-theme="dark"] .desktop-toys .desk-toy .desk-name,
+html[data-theme="dark"] .desk-toy .desk-name{
+  color:#f1ead6!important;text-shadow:0 1px 3px #040a12,0 0 4px #040a12!important;
+}
+html[data-theme="dark"] .ico:hover,html[data-theme="dark"] .ico.on,
+html[data-theme="dark"] .desktop-toys .desk-toy:hover,
+html[data-theme="dark"] .desktop-toys .desk-toy.selected{
+  background:rgba(242,181,82,.16)!important;border-color:rgba(242,181,82,.55)!important;
+}
+html[data-theme="dark"] .ico svg,
+html[data-theme="dark"] .desktop-toys .desk-toy img{filter:brightness(.88) saturate(.92)!important}
+
+/* ---------- a folha principal (o "blog") ---------- */
+html[data-theme="dark"] .sheet{
+  background:rgba(10,20,32,.93);
+  border:1.5px solid #4f6a80;
+  box-shadow:0 0 0 1px #050b14,0 10px 40px rgba(2,6,12,.55);
+  /* costura: linha tracejada âmbar por dentro da borda */
+  outline:1.5px dashed rgba(217,162,79,.55);outline-offset:-3px;
+}
+html[data-theme="dark"] .bar{
+  background:var(--card2);color:#c9bba0;border-bottom-color:#35506a;
+}
+html[data-theme="dark"] .love{color:#b7c3c9}
+/* botão de costura no rodapé */
+html[data-theme="dark"] .love::after{
+  content:"";display:block;width:22px;height:22px;margin:10px auto 2px;border-radius:50%;
+  background:
+    radial-gradient(circle at 34% 50%,#050b14 0 2.2px,transparent 2.6px),
+    radial-gradient(circle at 66% 50%,#050b14 0 2.2px,transparent 2.6px),
+    radial-gradient(circle at 35% 30%,#2b3d4f,#101c29 70%);
+  border:1.5px solid #5a7389;box-shadow:0 1px 0 #000,inset 0 0 0 3px #17283a;
+}
+
+/* ---------- widgets / cards ---------- */
+html[data-theme="dark"] .w{background:var(--card);border-color:#3c566c;box-shadow:0 1px 0 #050b14}
+html[data-theme="dark"] .w>.t{
+  background:var(--card2);color:#d4c7aa;border-bottom-color:#3c566c;position:relative;
+}
+/* botão de costura (dois furinhos) no canto de cada janelinha */
+html[data-theme="dark"] .w>.t::after{
+  content:"";position:absolute;right:8px;top:50%;width:11px;height:11px;margin-top:-5.5px;border-radius:50%;
+  background:
+    radial-gradient(circle at 36% 50%,#050b14 0 1px,transparent 1.3px),
+    radial-gradient(circle at 64% 50%,#050b14 0 1px,transparent 1.3px),
+    radial-gradient(circle at 35% 30%,#4a6178,#1a2b3c 75%);
+  border:1px solid #5f7a91;
+}
+html[data-theme="dark"] .dash{background:var(--card);border-color:#4d6b80}
+html[data-theme="dark"] .tag{background:var(--tint);border-color:#4b667b;color:var(--ink)}
+html[data-theme="dark"] .tag:hover{background:#1b3248;border-color:var(--thread);color:var(--pinkd)}
+html[data-theme="dark"] .tag.tag-extra{background:transparent;border-color:#5b7a8f;color:#c4cfd4}
+html[data-theme="dark"] .entry:hover{background:#17283a;border-color:var(--thread)}
+html[data-theme="dark"] .stamp{background:var(--tint);border-color:#56788d;color:var(--pinkd)}
+html[data-theme="dark"] .stamp b{color:var(--ink)}
+html[data-theme="dark"] .posts b{color:var(--pinkd)}
+html[data-theme="dark"] .vis{
+  color:var(--soft);
+  background:repeating-linear-gradient(45deg,#0f1d2d 0 8px,#142538 8px 9px);
+}
+html[data-theme="dark"] .tl,
+html[data-theme="dark"] .posts li,
+html[data-theme="dark"] .qa,
+html[data-theme="dark"] .fields dt,
+html[data-theme="dark"] .fields dd{border-bottom-color:#2f4659}
+
+html[data-theme="dark"] mark{background:linear-gradient(transparent 55%,rgba(242,181,82,.38) 55%);color:inherit}
+html[data-theme="dark"] [contenteditable]{border-bottom-color:var(--thread)}
+html[data-theme="dark"] .career-role{border-left-color:var(--thread)}
+
+/* ---------- botões ---------- */
+html[data-theme="dark"] button,html[data-theme="dark"] .btn{
+  background:#162a3c;border-color:#52708a;color:var(--ink);
+}
+html[data-theme="dark"] button:hover,html[data-theme="dark"] .btn:hover{
+  background:#2a2114;border-color:var(--thread);color:var(--pinkd);
+}
+html[data-theme="dark"] .btn{background:linear-gradient(#1c3347,#12222f);border-color:#52708a}
+html[data-theme="dark"] .btn.pri{background:linear-gradient(#f2b552,#c98a2c);color:#2a1b05;border-color:#8a5d17}
+html[data-theme="dark"] .btn.pri:hover{background:linear-gradient(#ffd07f,#e0a040);border-color:#8a5d17;color:#2a1b05}
+
+/* ---------- medidor arrastável ---------- */
+html[data-theme="dark"] .mt{background:#0a1522;border-color:#56788d}
+html[data-theme="dark"] .mt i{background:linear-gradient(#ffe1a8,#e0a040);border-color:#8a5d17}
+html[data-theme="dark"] .ml{color:var(--soft)}
+
+/* ---------- widgets da lateral ---------- */
+html[data-theme="dark"] .ctr{
+  background:#050b14;color:#f6c15f;text-shadow:0 0 6px rgba(246,193,95,.7);border:1px solid #2d4559;
+}
+html[data-theme="dark"] .gb input{background:#0a1522;color:var(--ink);border-color:#3c566c}
+html[data-theme="dark"] .gb input::placeholder{color:#7d909b}
+html[data-theme="dark"] .rec img{filter:brightness(.92)}
+
+/* ---------- about: polaroid / ficha ---------- */
+html[data-theme="dark"] .pol{background:#e6dcc3;border-color:#bdb08d;box-shadow:0 6px 18px rgba(0,0,0,.45)}
+html[data-theme="dark"] .pol figcaption{color:#5d5a4a}
+html[data-theme="dark"] .pol .on{background:#f3ecd6;border-color:#bdb08d;color:#2c7a58}
+html[data-theme="dark"] .tape{background:repeating-linear-gradient(90deg,rgba(217,162,79,.82) 0 6px,rgba(240,226,190,.62) 6px 12px)}
+html[data-theme="dark"] .me img{background:#e6dcc3;border-color:#bdb08d}
+html[data-theme="dark"] .fields dt{color:var(--pinkd)}
+html[data-theme="dark"] .qa b{color:var(--pinkd)}
+
+/* ---------- home: perfil + boas-vindas ---------- */
+html[data-theme="dark"] .home-welcome{border-bottom-color:#2f4659}
+html[data-theme="dark"] .home-welcome .home-welcome-title,
+html[data-theme="dark"] .home-welcome p{color:var(--ink)!important}
+html[data-theme="dark"] .home-welcome-eyebrow{color:var(--pinkd)}
+html[data-theme="dark"] .home-profile-photo{background:#e6dcc3;border-color:#bdb08d}
+html[data-theme="dark"] .mini-online{background:#f3ecd6;color:#2c7a58;border-color:#bdb08d}
+html[data-theme="dark"] .home-based{color:var(--soft)}
+html[data-theme="dark"] .home-currently,
+html[data-theme="dark"] .home-highlights>div,
+html[data-theme="dark"] .home-facts dt,
+html[data-theme="dark"] .home-facts dd{border-color:#35506a}
+html[data-theme="dark"] .home-currently b{color:#d9c9a4}
+html[data-theme="dark"] .home-facts dt,
+html[data-theme="dark"] .home-flower{color:var(--pinkd)}
+html[data-theme="dark"] .more-about{color:var(--pinkd)}
+html[data-theme="dark"] .home-profile-photo:hover{box-shadow:0 5px 16px rgba(0,0,0,.5)}
+
+/* ---------- barras de 88x31 ---------- */
+html[data-theme="dark"] .b88{background:linear-gradient(#1c3347,#10202f);color:#d9d2bd;border-color:#58748a;box-shadow:inset 0 0 0 1px #2a465c}
+html[data-theme="dark"] .b88.k{background:linear-gradient(#050b14,#0e1a28);color:#f0e8d0;border-color:#2d4559;box-shadow:inset 0 0 0 1px #1e3347}
+html[data-theme="dark"] .b88.p{background:linear-gradient(#3a2a12,#241808);color:#ffc46b;border-color:#a8742a}
+html[data-theme="dark"] .b88.s{background:linear-gradient(#1f2f3d,#142230);color:#aebdc6;border-color:#56707f}
+
+/* ---------- say hello (janela de e-mail) ---------- */
+html[data-theme="dark"] .mail{background:var(--card);border-color:#4b667b}
+html[data-theme="dark"] .mail .mt2,
+html[data-theme="dark"] .mt2{background:var(--card2);color:#e0d3b4;border-bottom-color:#3c566c}
+html[data-theme="dark"] .mt2 .g{color:var(--pink)}
+html[data-theme="dark"] .mail .row{background:#112133;border-bottom-color:#2a4156}
+html[data-theme="dark"] .mail .row span:first-child{color:#a6b7c1}
+html[data-theme="dark"] .mail-controls button{background:linear-gradient(#233b50,#14263a);border-color:#5d7a92;color:var(--ink)}
+html[data-theme="dark"] .mail-controls button:hover{background:#3a2d1a}
+html[data-theme="dark"] .mail-closed{border-color:#4b667b;background:var(--card)}
+html[data-theme="dark"] .mail-closed button{background:var(--card2);border-color:#5d7a92}
+
+/* ---------- barra de tarefas + menu iniciar ---------- */
+html[data-theme="dark"] #tb{background:#0b1725;border-top-color:#35506a}
+html[data-theme="dark"] #tb a,html[data-theme="dark"] #tb button{background:#162a3c;border-color:#4b667b;color:var(--ink)}
+html[data-theme="dark"] #tb a.on{box-shadow:inset 0 -2px var(--thread);background:#1b3248}
+html[data-theme="dark"] #st.start-active{background:linear-gradient(#2a2114,#1a140a);box-shadow:inset 0 1px 3px #000}
+html[data-theme="dark"] .start-mark{color:var(--pink);text-shadow:0 0 6px rgba(240,168,69,.6)}
+html[data-theme="dark"] .clk{color:#8fa3af}
+html[data-theme="dark"] #start-menu{
+  background:#0f1d2d!important;color:var(--ink)!important;
+  border:1px solid #58748a!important;box-shadow:2px 2px 0 rgba(0,0,0,.55)!important;
+}
+html[data-theme="dark"] #start-menu .start-post{color:#e4dcc6!important;background:transparent!important}
+html[data-theme="dark"] #start-menu .start-post:hover,
+html[data-theme="dark"] #start-menu .start-post:focus-visible{background:var(--thread)!important;color:#2a1b05!important}
+
+/* ---------- ícones SVG da barra de tarefas ---------- */
+html[data-theme="dark"] .tb-mini svg{filter:brightness(.9)}
+
+/* ---------- widget do tema (visível nos dois modos) ---------- */
+.theme-switch{
+  display:flex;align-items:center;justify-content:space-between;gap:8px;width:100%;
+  padding:7px 9px;cursor:pointer;font:11px Tahoma,Verdana,sans-serif;text-align:left;
+}
+.theme-switch .opt{display:inline-flex;align-items:center;gap:4px;opacity:.55;transition:opacity .2s}
+.theme-switch .track{
+  position:relative;flex:none;width:46px;height:22px;border-radius:12px;
+  background:linear-gradient(#a9c0ef,#d8e3fb);border:1px solid #6f82b8;box-shadow:inset 0 1px 3px rgba(40,55,110,.35);
+  transition:background .3s,border-color .3s;
+}
+/* a bolinha do interruptor é um botão de costura */
+.theme-switch .knob{
+  position:absolute;top:1px;left:1px;width:18px;height:18px;border-radius:50%;
+  background:
+    radial-gradient(circle at 36% 50%,#4b5a8a 0 1.2px,transparent 1.6px),
+    radial-gradient(circle at 64% 50%,#4b5a8a 0 1.2px,transparent 1.6px),
+    radial-gradient(circle at 35% 30%,#fff,#d7def3 75%);
+  border:1px solid #7385bb;transition:transform .28s cubic-bezier(.5,0,.2,1),background .3s;
+}
+.theme-switch .opt.day{opacity:1}
+.theme-note{display:block;margin-top:6px;font:10px var(--mono);color:var(--soft)}
+
+html[data-theme="dark"] .theme-switch .opt.day{opacity:.5}
+html[data-theme="dark"] .theme-switch .opt.night{opacity:1}
+html[data-theme="dark"] .theme-switch .track{background:linear-gradient(#050b14,#0f2033);border-color:var(--thread);box-shadow:inset 0 1px 4px #000}
+html[data-theme="dark"] .theme-switch .knob{
+  transform:translateX(24px);
+  background:
+    radial-gradient(circle at 36% 50%,#050b14 0 1.2px,transparent 1.6px),
+    radial-gradient(circle at 64% 50%,#050b14 0 1.2px,transparent 1.6px),
+    radial-gradient(circle at 35% 30%,#ffe2a8,#d9a24f 75%);
+  border-color:#8a5d17;
+}
+.theme-switch:focus-visible{outline:2px solid var(--acc);outline-offset:1px}
+
+/* ---------- vaga-lumes (só no escuro) ---------- */
+.fireflies{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden;display:none}
+html[data-theme="dark"] .fireflies{display:block}
+.fireflies i{
+  position:absolute;width:var(--s,4px);height:var(--s,4px);border-radius:50%;
+  background:#ffe7a3;box-shadow:0 0 6px 2px rgba(255,214,120,.65),0 0 16px 5px rgba(242,181,82,.28);
+  opacity:0;animation:ff-float var(--t,14s) ease-in-out infinite,ff-blink var(--b,3.4s) ease-in-out infinite;
+  animation-delay:var(--d,0s);
+}
+@keyframes ff-float{
+  0%{transform:translate(0,0)}
+  25%{transform:translate(var(--x1,30px),var(--y1,-24px))}
+  50%{transform:translate(var(--x2,-20px),var(--y2,-50px))}
+  75%{transform:translate(var(--x3,26px),var(--y3,-26px))}
+  100%{transform:translate(0,0)}
+}
+@keyframes ff-blink{0%,100%{opacity:0}35%,65%{opacity:.95}}
+@media(prefers-reduced-motion:reduce){.fireflies i{animation:none;opacity:.5}}
+
+
+/* ---------- operations case ---------- */
+html[data-theme="dark"] .ops-demo{background:#11202f;border-color:#58748a;box-shadow:inset 0 0 0 1px rgba(255,255,255,.02)}
+html[data-theme="dark"] .ops-demo-head{border-bottom-color:#486175}
+html[data-theme="dark"] .ops-scroll{border-color:#486175}
+html[data-theme="dark"] .ops-table{background:#0f1d2d;color:#e4dcc6}
+html[data-theme="dark"] .ops-table th{background:#193146;color:#f1e7cf;border-color:#58748a}
+html[data-theme="dark"] .ops-table td{border-color:#486175}
+html[data-theme="dark"] .ops-table tbody tr:nth-child(odd){background:#142537}
+html[data-theme="dark"] .ops-table tbody tr:nth-child(even){background:#10202f}
+html[data-theme="dark"] .ops-table select{background:#1a2d40!important;color:#f1e7cf!important;border-color:#6e8ba0!important}
+html[data-theme="dark"] .ops-table td:has(select){background:#2a2130}
+html[data-theme="dark"] .ops-table td:has(select[data-ops-control="pay"]){background:#1d3029}
+html[data-theme="dark"] .ops-empty{color:#9db3bf!important}
+html[data-theme="dark"] .ops-accounting{background:#142537;border-left-color:var(--thread)}
+html[data-theme="dark"] .ops-formula span,html[data-theme="dark"] .ops-formula strong{background:#10202f;border-color:#58748a}
+html[data-theme="dark"] .ops-output-total,html[data-theme="dark"] .ops-results>div{background:#142537;border-color:#58748a}
+html[data-theme="dark"] .ops-demo button,html[data-theme="dark"] .ops-demo select{background:#162a3c;color:#e4dcc6;border-color:#58748a}
+html[data-theme="dark"] .ops-runbar .ops-run{color:#1d1203}
+
+/* Operations demo controls in dark mode: strong amber CTA and visible steps. */
+html[data-theme="dark"] .ops-demo button{background:#223a50;color:#f0e5cb;border:1px solid #7894a6;box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 2px 0 #071320}
+html[data-theme="dark"] .ops-demo button:hover{background:#304e64;color:#fff0ce;border-color:#b6c5cf;box-shadow:inset 0 1px 0 rgba(255,255,255,.2),0 3px 0 #071320}
+html[data-theme="dark"] .ops-demo button:active{background:#152c40;box-shadow:inset 0 1px 4px #06111e}
+html[data-theme="dark"] .ops-demo .ops-runbar .ops-run{background:#f2b552;color:#1b2430;border-color:#ffd782;box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 2px 0 #855b1b;text-shadow:none}
+html[data-theme="dark"] .ops-demo .ops-runbar .ops-run:hover{background:#ffd071;color:#132535;border-color:#ffe3aa;box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 3px 0 #855b1b}
+html[data-theme="dark"] .ops-demo .ops-runbar .ops-run:active{background:#d89b38;color:#172331;box-shadow:inset 0 1px 3px #885c26}
+html[data-theme="dark"] .ops-demo .ops-stages button[aria-pressed="true"]{background:#57411f;color:#ffe6a4;border-color:#f2b552;box-shadow:inset 0 0 0 1px #c59043}
+html[data-theme="dark"] .ops-demo .ops-stages button:hover{background:#364657;color:#ffe4a6;border-color:#f2b552}

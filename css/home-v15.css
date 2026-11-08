@@ -1,0 +1,88 @@
+/* v15 — hero, split layout, rail tweaks, CRM/ops case additions */
+/* logo: a little smaller (two-line lockup kept) */
+@media(min-width:851px){.hd .strip-identity .saved-logo{width:clamp(262px,29vw,312px)!important}}
+/* top of home: profile (left, narrow) + intro (middle), same height, same inner rhythm */
+.home-top{display:grid;grid-template-columns:214px minmax(0,1fr);gap:var(--g,14px);align-items:stretch;margin-bottom:var(--g,14px)}
+.home-top>.w{margin:0;display:flex;flex-direction:column}.home-top>.w>.b{flex:1;display:flex;flex-direction:column}
+.pcard,.intro2{flex:1;display:flex;flex-direction:column}
+/* intro */
+.intro2{padding:2px 2px 0}
+.hero-h1{font:700 17px/1.3 Tahoma,Verdana,sans-serif;color:var(--ink);margin:0 0 10px}
+.hero-sub{font:400 13.5px/1.82 Tahoma,Verdana,sans-serif;margin:0 0 16px;color:var(--ink)}
+.mk{background:linear-gradient(transparent 58%,var(--hl,#ffd3e8) 58%);color:inherit;padding:0 1px;font-weight:600}
+html[data-theme="dark"] .mk{--hl:#6b3350}
+.res-band{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin:auto 0;border-top:1px dashed var(--dash);border-bottom:1px dashed var(--dash);background:var(--tint)}
+.res-band>div{padding:14px 14px 12px}
+.intro2 .hero-cta{margin-top:16px}.res-band>div+div{border-left:1px dotted var(--dash)}
+.res-band b{display:block;font:700 24px/1.1 var(--mono);color:var(--acc);letter-spacing:-.04em;white-space:nowrap}
+.res-band span{display:block;margin-top:4px;min-height:2.8em;font:10.5px/1.4 Tahoma,Verdana,sans-serif;color:var(--soft)}
+.hero-cta{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding-top:0}.hero-cta .btn{font-size:12px}
+/* profile card: one centered column, ends on the same line as the CTA row */
+.pcard{align-items:center;justify-content:space-between;text-align:center;gap:10px;padding-top:2px}
+.pcard .home-profile-photo{width:96px;margin:0 auto}
+.pcard-id h2{font-size:14px;line-height:1.3;margin:0 0 2px}.pcard-id .home-based{margin:0;font-size:12px}
+.pcard-now{margin:0;font:12px/1.5 Tahoma,Verdana,sans-serif}.pcard-now b{display:block;font:600 9.5px var(--mono);letter-spacing:.08em;color:var(--acc);margin-bottom:2px}
+.pcard-facts{list-style:none;margin:0;padding:0;align-self:stretch;border-top:1px dotted #c5bfd1}.pcard-facts li{font:11px/1.4 Tahoma,Verdana,sans-serif;padding:6px 0;border-bottom:1px dotted #c5bfd1}.pcard-facts li:last-child{border-bottom:0;padding-bottom:0}
+@media(max-width:860px){.home-top{grid-template-columns:1fr}.pcard{display:grid;grid-template-columns:96px minmax(0,1fr);column-gap:16px;row-gap:8px;text-align:left;align-items:start}.pcard .home-profile-photo{grid-row:1/4}.pcard-facts{grid-column:1/-1}}
+@media(max-width:520px){.res-band{grid-template-columns:1fr}.res-band>div+div{border-left:0;border-top:1px dotted var(--dash)}.res-band span{min-height:0}}
+/* featured posts + tools split */
+.home-split{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:var(--g,14px);align-items:start}
+.home-split>div>.w{margin-bottom:var(--g,14px)}
+.posts .hl{display:block;font:600 11px/1.5 Tahoma,Verdana,sans-serif;color:var(--acc);margin-top:3px}
+.toolgroups{margin:0}.toolgroups dt{font:600 10px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--soft);margin:10px 0 5px}.toolgroups dt:first-child{margin-top:0}.toolgroups dd{margin:0}
+@media(max-width:760px){.home-split{grid-template-columns:1fr}}
+/* rail */
+.rail-links .bul a{font-weight:700}
+.gb-quote{display:none}
+.gb-quote-old{margin:0 0 10px;padding:8px 9px;border-left:3px solid var(--acc);background:var(--tint)}
+.gb-quote blockquote{margin:0;font:italic 12px/1.55 Tahoma,Verdana,sans-serif}
+.gb-quote figcaption{margin-top:5px;font:10px/1.5 var(--mono);color:var(--soft)}
+.gb-note{display:block;margin-top:4px;color:var(--soft);font-size:10px}
+/* ops case: nested tracker demo */
+.ops-more{margin:12px 0;border-top:1px dotted var(--dash);padding-top:10px}
+.ops-more>summary{cursor:pointer;font:600 12px var(--mono);list-style:none}
+.ops-more>summary::before{content:"▸ "}.ops-more[open]>summary::before{content:"▾ "}
+.ops-more>summary small{display:block;margin:2px 0 0 16px;font:11px Tahoma,Arial,sans-serif;color:var(--soft);font-weight:400}
+.ops-more[open]>summary{margin-bottom:10px}
+/* to-do markers for text still to be written */
+.ops-todo{display:inline-block;border:1px dashed #e0589c;background:#fff0f7;color:#a01f62;padding:1px 6px;font:11px/1.5 var(--mono)}
+/* dark */
+html[data-theme="dark"] .hero-h1,html[data-theme="dark"] .hero-sub{color:var(--ink)}
+html[data-theme="dark"] .ops-todo{background:#3a2233;color:#ffc4de;border-color:#e0589c}
+
+/* rail stays sticky and scrolls inside itself */
+.rail{scrollbar-width:thin;scrollbar-color:#b9b3d6 transparent}
+.sm-flow.six{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+@media(max-width:600px){.sm-flow.six{grid-template-columns:1fr}}
+.gb-entry{margin:0 0 10px;padding:8px 9px;border-left:3px solid var(--acc);background:var(--tint)}
+.gb-entry p{margin:0;font:italic 12px/1.55 Tahoma,Verdana,sans-serif}
+.gb-entry footer{margin-top:5px;font:10px/1.5 var(--mono);color:var(--soft)}.gb-entry footer b{color:var(--ink)}
+
+/* kitty.exe: keep the bigger drawing, but align its label with the other icons */
+.desktop-toys .desk-toy[data-name="kitty.exe"] img{height:62px!important;margin-top:-5px}
+/* narrow profile title: keep the text clear of the dark-mode window button */
+.home-profile-w>.t{white-space:nowrap}
+html[data-theme="dark"] .home-profile-w>.t{padding-right:30px}
+/* dark highlight: warm accent text with a soft dotted underline instead of an amber block behind light text */
+html[data-theme="dark"] .mk{background:none;color:#f2c46a;text-decoration:underline dotted rgba(242,196,106,.7);text-decoration-thickness:1.5px;text-underline-offset:4px}
+/* phones: dock + desktop files below the page */
+@media(max-width:760px){.deskcol{margin-top:14px}.dock{flex-wrap:wrap;margin-bottom:6px}.desktop-toys{margin:4px auto 64px!important}}
+@media(max-width:760px){
+ .desktop-toys{position:relative!important;left:auto!important;top:auto!important;width:100%!important;height:auto!important;display:flex!important;flex-wrap:wrap;justify-content:center;gap:4px 8px}
+ .desktop-toys .toy-lane{position:static!important;display:contents!important}
+ .desktop-toys .desk-toy{position:static!important;transform:none!important;width:76px;height:90px;flex:0 0 auto}
+ .desktop-toys .desk-name{text-shadow:0 1px 2px rgba(30,40,90,.65)}
+}
+
+/* QA checklist */
+.qa-list{list-style:none;margin:8px 0 16px;padding:12px 16px;border:1px dashed var(--dash);background:var(--tint);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 22px}
+.qa-list li{font:13px/1.5 Tahoma,Verdana,sans-serif;padding-left:20px;position:relative}
+.qa-list li::before{content:"✓";position:absolute;left:0;color:var(--acc);font-weight:700}
+@media(max-width:560px){.qa-list{grid-template-columns:1fr}}
+.sm-page .sm-uc{grid-template-columns:repeat(2,minmax(0,1fr))}
+
+/* v23: bigger polaroid, linked results */
+.pcard .home-profile-photo{width:min(100%,150px)}
+.res-band>a{display:block;padding:14px 14px 12px;color:inherit;text-decoration:none}.res-band>a+a{border-left:1px dotted var(--dash)}.res-band>a:hover{background:var(--pinkl)}
+@media(max-width:860px){.pcard .home-profile-photo{width:96px}}
+@media(max-width:520px){.res-band>a+a{border-left:0;border-top:1px dotted var(--dash)}}
