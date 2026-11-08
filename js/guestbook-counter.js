@@ -17,14 +17,15 @@
     return;
   }
   const url = cfg.url.replace(/\/$/, '');
-  const headers = {'apikey': cfg.anonKey, 'Authorization': 'Bearer ' + cfg.anonKey, 'Content-Type': 'application/json'};
+  const headers = {'apikey': cfg.anonKey, 'Content-Type': 'application/json'};
   async function request(path, options = {}) {
     const controller = new AbortController();
     const timer = setTimeout(() => controller.abort(), 10000);
     try {
       const response = await fetch(url + path, {headers, ...options, signal:controller.signal});
       if (!response.ok) throw new Error('HTTP ' + response.status);
-      return response.status === 204 ? null : await response.json();
+      const body = await response.text();
+      return body ? JSON.parse(body) : null;
     } finally {clearTimeout(timer);}
   }
   function getVisitorId() {

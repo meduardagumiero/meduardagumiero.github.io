@@ -1,6 +1,5 @@
-// Public browser configuration only. NEVER put a service_role or secret key here.
-// From Supabase > Project Settings > API (or Connect): Project URL + publishable/anon key.
+// Public Supabase browser connection — no secret keys or database passwords.
 window.DUDA_SUPABASE = {
-  url: "",
-  anonKey: ""
+  url: "https://bkqwrtktfftrvtzgehxfd.supabase.co",
+  anonKey: "sb_publishable_cENPMHMILbKKNE99BHWquQ_sgoIvTaT"
 };
