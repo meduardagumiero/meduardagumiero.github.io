@@ -302,3 +302,7 @@ html[data-theme="dark"] .ops-demo .ops-runbar .ops-run:hover{background:#ffd071;
 html[data-theme="dark"] .ops-demo .ops-runbar .ops-run:active{background:#d89b38;color:#172331;box-shadow:inset 0 1px 3px #885c26}
 html[data-theme="dark"] .ops-demo .ops-stages button[aria-pressed="true"]{background:#57411f;color:#ffe6a4;border-color:#f2b552;box-shadow:inset 0 0 0 1px #c59043}
 html[data-theme="dark"] .ops-demo .ops-stages button:hover{background:#364657;color:#ffe4a6;border-color:#f2b552}
+
+@media (max-width: 900px), (hover: none) and (pointer: coarse) {
+  html[data-theme="dark"] body { background-attachment: scroll; background-position: center top; }
+}

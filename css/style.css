@@ -906,3 +906,17 @@ html[data-theme="dark"] .cam .camera-night{display:block;}
 .gb-note{display:block;margin-top:6px;line-height:1.45}
 .gb-honeypot{position:absolute!important;left:-99999px;width:1px;height:1px;overflow:hidden}
 #gs:disabled{opacity:.55;cursor:not-allowed}
+
+/* iOS Safari: avoid fixed-background rendering/zoom glitches */
+@media (max-width: 900px), (hover: none) and (pointer: coarse) {
+  body { background-attachment: scroll; background-position: center top; }
+}
+
+/* v52 — consistent interactive typography on iOS Safari.
+   Keep existing weights, sizes, colors and layout; only replace serif/native fallbacks. */
+button, input, textarea, select, option, summary,
+#tb, #tb a, #tb button, #tabs a, #tabs button,
+.hd .menu a, main .btn, main a.btn, main button,
+.btns a, .btns button, .b88 {
+  font-family: Tahoma, Verdana, Arial, sans-serif !important;
+}
